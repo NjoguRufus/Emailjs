@@ -1,27 +1,31 @@
-import React from 'react';
-const ProductCard = ({ product, addToCart }) => {
+import React, { useState, useEffect } from 'react';
+import ProductCard from './ProductCard';
+
+const ProductsSection = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch products from an API or use static data
+    fetch('/api/products')
+      .then(response => response.json())
+      .then(data => setProducts(data))
+      .catch(error => console.error('Error fetching products:', error));
+  }, []);
+
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-4">
-        <h3 className="text-lg font-bold mb-2">{product.name}</h3>
-        <p className="text-gray-600 mb-4">{product.description}</p>
-        <div className="flex justify-between items-center">
-          <span className="text-xl font-bold text-green-600">{product.price}</span>
-          <button
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none"
-            onClick={() => addToCart(product)}
-          >
-            Add to Cart
-          </button>
-        </div>
+    <div className="container mx-auto py-8">
+      <h2 className="text-3xl font-bold mb-6">Our Products</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {products.length === 0 ? (
+          <p>Loading products...</p>
+        ) : (
+          products.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        )}
       </div>
     </div>
   );
 };
 
-export default ProductCard;
+export default ProductsSection;
