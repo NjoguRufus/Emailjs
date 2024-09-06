@@ -1,39 +1,25 @@
-// src/components/ProjectSection.js
 import React from 'react';
-import ProjectCard from './ProjectCard';
 
-const projects = [
-  {
-    image: 'project-image1.jpg',
-    title: 'Project Title 1',
-    description: 'A brief description of the project.',
-  },
-  {
-    image: 'project-image2.jpg',
-    title: 'Project Title 2',
-    description: 'A brief description of the project.',
-  },
-  // Add more projects as needed
-];
-
-const ProjectSection = () => {
+const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 bg-gray-100">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">My Projects</h2>
+        <p className="text-lg mb-8">Here are some of the projects I've worked on.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              image={project.image}
-              title={project.title}
-              description={project.description}
-            />
-          ))}
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            {/* Apply rounded-full class to the image to make it circular */}
+            <img src="project-image1.jpg" alt="Project 1" className="w-full h-48 object-cover rounded-full" />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2">Project Title 1</h3>
+              <p className="text-gray-700">A brief description of the project.</p>
+            </div>
+          </div>
+          {/* Repeat for other projects */}
         </div>
       </div>
     </section>
   );
 };
 
-export default ProjectSection;
+export default ProjectsSection;
