@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import ProductCard from './ProductCard';
+import React from 'react';
+import ProductCard from './ProductCard'; // Ensure this path is correct
+
 
 const ProductsSection = () => {
   const [products, setProducts] = useState([]);
