@@ -1,4 +1,5 @@
 import React from 'react';
+
 const ProductCard = ({ product, addToCart }) => {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">

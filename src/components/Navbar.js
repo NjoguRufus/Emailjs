@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
   return (
-    <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex justify-between">
+    <nav className="bg-gray-900 text-white p-4 sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold">MyStore</Link>
-        <div>
-          <Link to="/cart" className="mr-4">Cart</Link>
-          <Link to="/checkout">Checkout</Link>
+        <div className="space-x-4">
+          <Link to="/" className="hover:text-gray-400">Home</Link>
+          <Link to="/cart" className="hover:text-gray-400">
+            Cart ({cartCount})
+          </Link>
         </div>
       </div>
     </nav>
