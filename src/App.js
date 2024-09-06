@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import HeroSection from './components/HeroSection';
-import ProjectsSection from './components/ProjectsSection';
+import ProductsSection from './components/ProductsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <HeroSection />
-      <ProjectsSection />
+      <ProductsSection />
       <ContactSection />
       <Footer />
     </div>
