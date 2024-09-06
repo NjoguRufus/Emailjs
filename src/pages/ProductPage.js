@@ -5,6 +5,10 @@ const ProductPage = ({ products }) => {
   const { id } = useParams();
   const product = products.find((item) => item.id === parseInt(id));
 
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
   return (
     <div className="container mx-auto my-10">
       <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
@@ -16,3 +20,4 @@ const ProductPage = ({ products }) => {
   );
 };
 
+export default ProductPage;
