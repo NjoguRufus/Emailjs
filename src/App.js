@@ -2,6 +2,7 @@
 import React from 'react';
 import AnimatedSection from './components/AnimatedSection';
 import ContactForm from './components/ContactForm';
+import './index.css';
 
 function App() {
   return (
