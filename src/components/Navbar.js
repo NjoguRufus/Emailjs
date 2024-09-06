@@ -1,16 +1,15 @@
-// src/components/Navbar.js
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-900 text-white py-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-xl font-bold">My Portfolio</div>
-        <ul className="flex space-x-4">
-          <li><Link to="products" smooth={true} duration={500}>Products</Link></li>
-          <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
-        </ul>
+    <nav className="bg-gray-800 text-white p-4">
+      <div className="container mx-auto flex justify-between">
+        <Link to="/" className="text-2xl font-bold">MyStore</Link>
+        <div>
+          <Link to="/cart" className="mr-4">Cart</Link>
+          <Link to="/checkout">Checkout</Link>
+        </div>
       </div>
     </nav>
   );

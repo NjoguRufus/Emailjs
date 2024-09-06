@@ -1,20 +1,21 @@
-// src/App.js
-import React from 'react';
-import HeroSection from './components/HeroSection';
-import ProductsSection from './components/ProductsSection';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProductPage from './pages/ProductPage';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import Contact from './components/ContactSection';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      <ProductsSection />
-      <ContactSection />
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/product/:id" component={ProductPage} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
+    </Router>
   );
 }
 
